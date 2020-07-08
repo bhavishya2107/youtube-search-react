@@ -1,26 +1,18 @@
-import React from "react";
-import { Paper, Typography, Grid } from "@material-ui/core";
-import { Skeleton } from "@material-ui/lab";
+import React, { useContext, useEffect } from "react";
+import AppContext from "../context/youtube/appContext";
+import { Paper, Typography } from "@material-ui/core";
+import Spinner from "./Spinner";
 
-const VideoDetails = ({ video }) => {
-  if (!video)
-    return (
-      <Grid justify="center" container spacing={10}>
-        <Grid item xs={12}>
-          <Grid container spacing={10}>
-            <Grid item xs={8}>
-              <Skeleton height={450} />
-            </Grid>
-            <Grid item xs={4}>
-              <Skeleton variant="rect" width={210} height={118} />
-              <Skeleton />
-              <Skeleton width="60%" />
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
-    );
-  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
+const VideoDetails = () => {
+  const appContext = useContext(AppContext);
+  const { selectedVideo } = appContext;
+  useEffect(() => {
+    (async () => {
+      appContext.handleSearchVideos("javascript");
+    })();
+  }, []);
+  if (!selectedVideo) return <Spinner />;
+  const videoSrc = `https://www.youtube.com/embed/${selectedVideo.id.videoId}`;
   return (
     <>
       <Paper elevatiom={0}>
@@ -34,13 +26,13 @@ const VideoDetails = ({ video }) => {
       </Paper>
       <Paper elevatiom={6} style={{ padding: "15px" }}>
         <Typography variant="h5">
-          {video.snippet.title} - {video.snippet.channelTitle}
+          {selectedVideo.snippet.title} - {selectedVideo.snippet.channelTitle}
         </Typography>
         <Typography variant="subtitle1">
-          Channel: {video.snippet.channelTitle}
+          Channel: {selectedVideo.snippet.channelTitle}
         </Typography>
         <Typography variant="subtitle2">
-          Description: {video.snippet.description}
+          Description: {selectedVideo.snippet.description}
         </Typography>
       </Paper>
     </>

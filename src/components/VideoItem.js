@@ -1,8 +1,10 @@
-import React from "react";
-import { Skeleton } from "@material-ui/lab";
+import React, { useContext } from "react";
 import { Grid, Paper, Typography } from "@material-ui/core";
+import AppContext from "../context/youtube/appContext";
 
-const VideoItem = ({ video, singleVideoSelect }) => {
+const VideoItem = ({ video }) => {
+  const appContext = useContext(AppContext);
+  const { singleVideoSelect } = appContext;
   return (
     <Grid item xs={12}>
       <Paper
