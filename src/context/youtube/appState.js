@@ -30,7 +30,7 @@ const AppState = (props) => {
       return video.id.kind === "youtube#video";
     });
     dispatch({ type: GET_VIDEOS, payload: filterOnlyVideos });
-    dispatch({ type: SELECTED_VIDEO, payload: response.data.items[0] });
+    dispatch({ type: SELECTED_VIDEO, payload: filterOnlyVideos[0] });
   };
 
   // Selected Video
