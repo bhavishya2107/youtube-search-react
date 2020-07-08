@@ -13,7 +13,7 @@ const VideoDetails = () => {
     })();
     // eslint-disable-next-line
   }, []);
-  
+
   if (!selectedVideo) return <Spinner />;
   const videoSrc = `https://www.youtube.com/embed/${selectedVideo.id.videoId}`;
   return (
@@ -25,6 +25,11 @@ const VideoDetails = () => {
           width="100%"
           title="Video player"
           src={videoSrc}
+          allowfullscreen="allowfullscreen"
+          mozallowfullscreen="mozallowfullscreen"
+          msallowfullscreen="msallowfullscreen"
+          oallowfullscreen="oallowfullscreen"
+          webkitallowfullscreen="webkitallowfullscreen"
         />
       </Paper>
       <Paper elevatiom={6} style={{ padding: "15px" }}>
