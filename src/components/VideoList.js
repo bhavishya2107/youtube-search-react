@@ -7,7 +7,7 @@ const VideoList = () => {
   const appContext = useContext(AppContext);
   const { videos } = appContext;
   const listVideos = videos.map((video, id) => (
-    <VideoItem key={id} video={video}/>
+    <VideoItem key={id} video={video} />
   ));
   return (
     <Grid container spacing={1}>

@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
-/* Global Styles */
 :root {
   --primary-color: #4769c7;
   --dark-color: #333333;
   --light-color: #f4f4f4;
-  --danger-color: #EF4E17;
+  --danger-color: #ef4e17;
   --success-color: #28a745;
 }
 
@@ -16,31 +15,13 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
   color: #333;
 }
 
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-a:hover {
-  color: #666;
-}
-
-ul {
-  list-style: none;
-}
-
-img {
-  width: 100%;
-}
-
-/* Utilities */
 .container {
   max-width: 1600px;
   margin: auto;
@@ -52,41 +33,6 @@ img {
   text-align: center;
 }
 
-.badge {
-  display: inline-block;
-  font-size: 0.8rem;
-  padding: 0.2rem 0.7rem;
-  text-align: center;
-  margin: 0.3rem;
-  background: var(--light-color);
-  color: #333;
-  border-radius: 5px;
-}
-
-.alert {
-  padding: 0.7rem;
-  margin: 1rem 0;
-  opacity: 0.9;
-  background: var(--light-color);
-  color: #333;
-}
-
-.btn-primary,
-.bg-primary,
-.badge-primary,
-.alert-primary {
-  background: var(--primary-color);
-  color: #fff;
-}
-
-.btn-light,
-.bg-light,
-.badge-light,
-.alert-light {
-  background: var(--light-color);
-  color: #333;
-}
-
 .video-container {
   display: flex;
   align-items: center;
@@ -94,7 +40,7 @@ img {
   margin-bottom: 1rem;
 }
 
-.video-details{
+.video-details {
   width: 60%;
   margin-bottom: 1rem;
 }
@@ -103,21 +49,42 @@ img {
   width: 30%;
   margin-bottom: 1rem;
   height: 41rem;
-  overflow-y: scroll;
   overflow-x: hidden;
+  padding: 10px;
+  box-shadow: 1px #888888;
 }
 
-/* Mobile Styles */
+::-webkit-scrollbar {
+  background: transparent;
+}
+
+
 @media (max-width: 768px) {
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 
   .video-container {
     display: block;
   }
 
-  .video-details{
+  .video-details {
     width: 100%;
   }
-  
+
   .video-items {
     width: 100%;
     overflow-y: scroll;
