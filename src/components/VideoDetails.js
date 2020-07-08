@@ -6,16 +6,19 @@ import Spinner from "./Spinner";
 const VideoDetails = () => {
   const appContext = useContext(AppContext);
   const { selectedVideo } = appContext;
+
   useEffect(() => {
     (async () => {
       appContext.handleSearchVideos("javascript");
     })();
+    // eslint-disable-next-line
   }, []);
+  
   if (!selectedVideo) return <Spinner />;
   const videoSrc = `https://www.youtube.com/embed/${selectedVideo.id.videoId}`;
   return (
     <>
-      <Paper elevatiom={0}>
+      <Paper elevation={3}>
         <iframe
           frameBorder="0"
           height="450px"

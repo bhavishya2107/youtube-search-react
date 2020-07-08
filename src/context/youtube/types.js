@@ -1,4 +1,3 @@
 export const GET_VIDEOS = "GET_VIDEOS";
 export const SELECTED_VIDEO = "SELECTED_VIDEO";
-export const SET_LOADING = "SET_LOADING";
 export const SELECT_SINGLE_VIDEO = "SELECT_SINGLE_VIDEO";
